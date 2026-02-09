@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap:1em;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+     width: 50px;
+     height: 50px;
+     border: 5px solid #384f7d;
+     border-top: 5px solid rgb(3, 28, 81);
+     border-radius: 50%;
+     animation: spin 1s linear infinite;
+ }
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

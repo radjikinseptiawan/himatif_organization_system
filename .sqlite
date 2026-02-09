@@ -1,0 +1,25 @@
+CREATE TABLE anggota (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nama VARCHAR(100),
+    alamat TEXT,
+    no_hp VARCHAR(20),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE buku (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    judul VARCHAR(150),
+    penulis VARCHAR(100),
+    penerbit VARCHAR(100),
+    stok INTEGER,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE peminjaman (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_anggota INTEGER,
+    tanggal_pinjam DATE,
+    tanggal_kembali DATE,
+    status TEXT CHECK(status IN ('dipinjam', 'dikembalikan')),
+    FOREIGN KEY (id_anggota) REFERENCES anggota(id)
+);
