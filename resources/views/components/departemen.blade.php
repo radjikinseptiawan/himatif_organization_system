@@ -1,4 +1,4 @@
-    <div class="px-4">
+    <div class="px-4" id="aboutUsId">
         <h1 class="text-2xl md:text-3xl font-bold text-center text-[#0c2b4b] mb-10">Departemen</h1>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 place-items-center">

@@ -1,3 +1,4 @@
+@vite("resources/js/app.js","resources/css/navigation.css")
 <nav class="bg-[#0c2b4b] flex w-full fixed z-20 justify-between p-2 items-center top-0">
     
     <div class="flex gap-2 items-center cursor-pointer" onclick="window.location.href = '/'">
@@ -16,8 +17,8 @@
     </button>
 </nav>
 
-<div id="sliders" class="hidden bg-white shadow-xl w-72 min-h-screen z-30 fixed top-0 right-0">
-    <div class="bg-[#0c2b4b] w-full h-14 p-2">
+<div id="sliders" class="fixed w-72 right-0 top-0 h-full bg-white z-50 transform translate-x-full transition-transform duration-300">
+    <div class="bg-yellow-500 w-full h-14 p-2">
         <button id="closeMenu" class="p-1 text-white rounded-md transition-all hover:bg-red-900 hover:text-red-950 hover:cursor-pointer hover:shadow-xl 
         border w-10 "> X </button>
     </div>
@@ -28,14 +29,12 @@
     </div>
 
     <ul class="p-2">
-        <li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Home</li>
-        <li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Pengurus Inti</li>
-        <li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Departemen</li>
-        <li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Galeri</li>
-        <li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Event</li>
+        <a href="{{ route("home") }}"><li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Home</li></a>
+        <a href="{{ route("penju") }}"><li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Penjamin Mutu</li></a>
+        <a href="{{ route("penti") }}"><li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Pengurus Inti</li></a>
+        <a href="{{ route("departemen") }}"><li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Departemen</li></a>
+        <a href="{{ route("galeri") }}"><li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Galeri</li></a>
+        <a href="{{ route("event") }}"><li class="p-2 my-1 border rounded-md text border-yellow-500 cursor-pointer font-semibold transition-all hover:bg-[#69849f] text-[#0c2b4b] ">Event</li></a>
     </ul>
 
 </div>
-
-
-<script src="/js/navigation.js"></script>

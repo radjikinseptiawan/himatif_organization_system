@@ -11,7 +11,10 @@
 </head>
 <body>
     
+
     @include("components.navigation.nonLoginNavigation")
+
+    <div id="overlay" class="fixed inset-0 bg-black/80 z-40 hidden"></div>
 
      <div id="loader">
         <div class="spinner"></div>
@@ -31,61 +34,37 @@
         </div>
     </div>
 
+    <div>
     @include("components.visimisi")
+    </div>
 
 
-    @include("components.departemen")
-
-
-
-    <div class="px-5 bg-[#0c2b4b] mt-2 w-full bottom-0 justify-between h-72 flex">
-        <div class="p-5">
-            <h1 class="text-yellow-300 font-bold text-3xl my-4 border-b-2">HIMATIF</h1>
-            <div class="flex gap-2 items-center w-72 my-2 text-white">
-                <img src="/icon/map-pin.svg" alt="">
-                <p>
-                Jl. Inspeksi Kalimalang No.9, Cibatu, Cikarang Sel., Kabupaten Bekasi, Jawa Barat 17530
-                </p>
-            </div>
-            <div class="flex gap-2 items-center text-white my-2">
-                <img src="/icon/phone.svg" alt="">
-                <p>
-                    089523807345
-                </p>
-            </div>
-            <div class="flex gap-2 items-center text-white my-2">
-                <img src="/icon/mail.svg" alt="">
-                <p>
-                    himatif@pelitabangsa.ac.id
-                </p>
-            </div>
-        </div>
-
-        <div class="p-5">
-            <h1 class="text-yellow-300 font-bold text-3xl my-4 border-b-2">Follow us</h1>
-
-            <div class="flex gap-2">
-                <a href="https://www.youtube.com/@himatifupb455" target="blank">
-                <div class="bg-white rounded-full">
-                <img src="/icon/youtube.png" class="w-10 h-10"  alt="">
+<div class="w-full flex justify-center px-4 py-10 bg-gray-50">
+    <div class="w-full max-w-4xl">
+        
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="aspect-video">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/_Oqe7qaoE6Y?si=r7a9vvtI09NAp7Xi"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
                 </div>
-                </a>
-
-                <a href="https://www.instagram.com/himatif.pb/" target="blank">
-                <div class="bg-white rounded-full">
-                <img src="/icon/instagram.png" class="w-10 h-10 rounded-full" alt="">
-                </div>
-                </a>
             </div>
         </div>
     </div>
 
 
-    <script>
-        window.addEventListener("load",()=>{
-            document.getElementById("loader").style.display = "none"
-             document.getElementById("content").style.display = "block"
-        })
-    </script>
+    <div id="departSection">
+    @include("components.departemen")
+    </div>
+
+
+
+@include("components.footer")
+
 </body>
 </html>

@@ -1,5 +1,6 @@
-<div class="w-full flex justify-center px-4 py-12 bg-gray-50">
-    <div class="max-w-7xl w-full bg-white rounded-3xl shadow-xl p-6 md:p-12">
+@vite("resources/js/app.js")
+<div id="aboutUsId" class="w-full flex justify-center px-4 py-12 bg-gray-50">
+    <div data-aos="fade-up"   class="max-w-7xl w-full bg-white rounded-3xl shadow-xl p-6 md:p-12">
         
         <div class="text-center max-w-3xl mx-auto mb-12">
             <h1 class="text-3xl md:text-4xl font-bold text-[#0c2b4b] mb-4">
@@ -11,7 +12,13 @@
                 mengalami perubahan menjadi HIMATIF Universitas Pelita Bangsa 
                 pada tanggal 29 Februari 2020. Organisasi ini menjadi wadah 
                 pengembangan mahasiswa Teknik Informatika dalam bidang akademik, 
-                organisasi, dan pengabdian masyarakat.
+                organisasi, dan pengabdian masyarakat. 
+            </p>
+            <br>
+            <p class="text-gray-600 leading-relaxed">
+                Website ini dibuat khusus untuk para pengurus periode tahun 2026/2027 
+                dalam rangka menjadi sistem informasi organisasi untuk para angkatan baru 
+                atau orang yang ingin mengenal HIMATIF lebih dalam.
             </p>
         </div>
 
