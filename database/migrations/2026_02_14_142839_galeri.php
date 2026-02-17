@@ -16,7 +16,8 @@ return new class extends Migration
             $table->text("google_link");
             $table->text("cover_link");
             $table->string("judul_album");
-        });
+            $table->timestamps();
+            });
     }
 
     /**

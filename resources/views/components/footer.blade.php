@@ -1,4 +1,4 @@
-    <div class="px-5 bg-[#0c2b4b] mt-2 w-full md:flex-row flex-col bottom-0 justify-between h-xl md:h-72 flex">
+    <div class="px-5 bg-[#0c2b4b] mt-2 w-full md:w-screen md:flex-row flex-col bottom-0 justify-between h-xl md:h-72 flex">
         <div class="p-5">
             <h1 class="text-yellow-300 font-bold text-3xl my-4 border-b-2">HIMATIF</h1>
             <div class="flex gap-2 items-center w-72 my-2 text-white">

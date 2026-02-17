@@ -22,7 +22,9 @@ Route::post("/login",[AuthController::class,"auth"]);
 Route::middleware(["auth"])->group(function(){
     // Galeri
     Route::get("/admin/galeri",[AdminController::class,"renderGaleri"])->name("admin.galeri");
-
+    Route::get("admin/galeri/{id}",[AdminController::class,"selectGaleri"])->name("admin.selectGaleri");
+    Route::post("/admin/galeri",[AdminController::class, "addGaleri"])->name("tambah.galeri");
+    Route::delete("/admin/galeri/{id}",[AdminController::class, "deleteGaleri"])->name("hapus.galeri");
     // Event
     Route::get("/admin/event",[AdminController::class,"renderEvent"])->name("admin.event");
 

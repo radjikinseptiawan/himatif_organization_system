@@ -35,9 +35,9 @@
             flex flex-col">
 
             <img 
-                src="{{ $item->cover_link }}" 
+                src="{{ asset("storage/".$item->cover_link) }}" 
                 alt="{{ $item->judul_album }}"
-                class="h-44 w-full object-cover">
+                class="h-54 w-full object-cover">
 
             <div class="p-4 flex flex-col flex-1">
                 <h1 class="text-lg font-bold text-center">

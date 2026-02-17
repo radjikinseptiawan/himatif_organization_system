@@ -1,6 +1,7 @@
 import './bootstrap';
 import "./components/navigation";
 import "./components/loading";
+import "./components/adminPanel";
 import AOS from "aos";
 import "aos/dist/aos.css"
 

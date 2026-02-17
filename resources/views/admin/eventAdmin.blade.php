@@ -17,10 +17,8 @@
     </div>
 <div class="min-h-screen flex mt-20">
 
-    <!-- Sidebar admin -->
     @include("components.adminPanel")
 
-    <!-- Konten utama -->
     <main class="flex-1 p-6">
 
         <h1 class="text-2xl font-bold text-[#0c2b4b] mb-6">
@@ -28,13 +26,14 @@
         </h1>
 
         <a href="#"
+            id="addAlbum"
            class="inline-block mb-6 px-4 py-2
            bg-[#0c2b4b] text-white font-semibold
            rounded-md shadow hover:bg-[#163e66]
            transition">
-            + Tambah Event        
+            + Tambah Event
         </a>
-        
+
         <div class="grid gap-6
             grid-cols-1
             sm:grid-cols-2
@@ -48,24 +47,22 @@
 
                 <img 
                     src="{{ $item->cover_link }}" 
-                    alt="{{ $item->judul_event }}"
+                    alt="{{ $item->judul_albun }}"
                     class="h-44 w-full object-cover">
 
                 <div class="p-4 flex flex-col flex-1">
                     <h1 class="text-lg font-bold text-center">
-                        {{ $item->judul_event }}
+                        {{ $item->judul_album }}
                     </h1>
 
                     <a href="{{ $item->google_link }}"
                         target="_blank"
-                        class="mt-auto p-2 
-                        my-2
-                        text-center
+                        class="my-2 mt-auto p-2 text-center
                         bg-[#0c2b4b] text-white font-bold
                         rounded-md hover:bg-[#163e66] transition">
                         View
                     </a>
-                    @auth
+    @auth
                     <a href="{{ $item->google_link }}"
                         target="_blank"
                         class="mt-auto p-2 text-center
@@ -92,10 +89,36 @@
 
         </div>
     </main>
+</div>
+    </div>
 
+<div id="modalAlbum"
+     class="fixed inset-0 flex items-center justify-center z-50 hidden">
+
+    <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-md">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Tambah Event</h2>
+            <button id="closeModal" class="text-red-600 font-bold">X</button>
+        </div>
+
+        <form class="flex flex-col gap-3">
+            <label>Cover</label>
+            <input type="file" class="border p-2 rounded">
+
+            <label>Nama Event</label>
+            <input type="text" class="border p-2 rounded">
+
+            <label>Link Google Drive</label>
+            <input type="text" class="border p-2 rounded">
+
+            <button type="submit"
+                class="bg-[#0c2b4b] text-white py-2 rounded hover:bg-[#163e66]">
+                Simpan
+            </button>
+        </form>
+    </div>
 </div>
 
-    </div>
     @include("components.footer")
 </body>
 </html>
