@@ -27,30 +27,26 @@
 
 <div class="w-full mt-2 gap-4 flex items-center justify-center bg-gray-50 p-6">
     <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
-        <div class="bg-gray-600 rounded-md p-2 h-72">
-            <p>Belum ada foto</p>
-        </div>
+            <img src="{{ $anggota[0]->foto_anggota }}" alt="">
        <h1 class="font-semibold p-2  text-[#0c2b4b]">
-            Adam Mubarok
+        {{ $anggota[0]->nama_anggota }}
         </h1>
     <div class="w-20 h-1 bg-[#0c2b4b] mx-auto mb-6 rounded-full"></div>
         <p class="text-gray-700 text-center leading-relaxed">
-            Ketua Umum HIMATIF UPB 2026/2027
+        {{ $anggota[0]->jabatan_anggota }}
         </p>
     </div>
 
 
 
     <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
-        <div class="bg-gray-600 rounded-md p-2 h-72">
-            <p>Belum ada foto</p>
-        </div>
+            <img src="{{ $anggota[1]->foto_anggota }}" alt="">
         <h1 class="font-semibold p-2  text-[#0c2b4b]">
-            Rayhan Fahrul Rozi
+        {{ $anggota[1]->nama_anggota }}
         </h1>
     <div class="w-20 h-1 bg-[#0c2b4b] mx-auto mb-6 rounded-full"></div>
         <p class="text-gray-700 text-center leading-relaxed">
-            Wakil Ketua Umum HIMATIF UPB 2026/2027
+        {{ $anggota[1]->jabatan_anggota }}
         </p>
     </div>
 </div>
@@ -59,44 +55,38 @@
 
 <div class="w-full gap-4 flex items-center justify-center bg-gray-50 p-6">
                 <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
-                <div class="bg-gray-600 rounded-md p-2 h-72">
-                    <p>Belum ada foto</p>
-                </div>
+                    <img src="{{ $anggota[2]->foto_anggota }}" alt="">
                 <h1 class="font-semibold p-2  text-[#0c2b4b]">
-                    Imam Permana
+                   {{ $anggota[2]->nama_anggota }}
                 </h1>
             <div class="w-20 h-1 bg-[#0c2b4b] mx-auto mb-6 rounded-full"></div>
                 <p class="text-gray-700 text-center leading-relaxed">
-                    Sekertaris Umum I
+                   {{ $anggota[2]->jabatan_anggota }}
                 </p>
             </div>
 
 
 
-                        <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
-                <div class="bg-gray-600 rounded-md p-2 h-72">
-                    <p>Belum ada foto</p>
-                </div>
-                <h1 class="font-semibold p-2  text-[#0c2b4b]">
-                      Zizantara Arzeva Cakra Kahana          
-                </h1>
+              <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
+                <img src="{{ $anggota[3]->foto_anggota }}" alt="">
+            <h1 class="font-semibold p-2  text-[#0c2b4b]">
+                  {{ $anggota[3]->nama_anggota }}
+                 </h1>
             <div class="w-20 h-1 bg-[#0c2b4b] mx-auto mb-6 rounded-full"></div>
                 <p class="text-gray-700 text-center leading-relaxed">
-                    Sekertaris Umum II
-                </p>
+                   {{ $anggota[3]->jabatan_anggota }}
+            </p>
             </div>
 
             <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
-                <div class="bg-gray-600 rounded-md p-2 h-72">
-                    <p>Belum ada foto</p>
-                </div>
+                    <img src="{{ $anggota[4]->foto_anggota }}" alt="">
                 <h1 class="font-semibold p-2  text-[#0c2b4b]">
-                    Nabilio Sawares
-                </h1>
+                  {{ $anggota[4]->nama_anggota }}
+                 </h1>
             <div class="w-20 h-1 bg-[#0c2b4b] mx-auto mb-6 rounded-full"></div>
                 <p class="text-gray-700 text-center leading-relaxed">
-                    Bendahara Umum
-                </p>
+                      {{ $anggota[4]->jabatan_anggota }}
+                 </p>
             </div>
 </div>
 
@@ -114,9 +104,7 @@
                     Visi
                 </h2>
                 <p class="text-gray-700 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Dolores perspiciatis beatae nihil labore perferendis voluptatum 
-                    dolorem cumque, architecto temporibus ab ut sint qui nisi.
+                        {{ $departemen->visi_departemen }}
                 </p>
             </div>
 
@@ -126,22 +114,12 @@
                 </h2>
 
                 <ul class="space-y-3 text-gray-700">
+                    @foreach ($misi as $item )
                     <li class="flex gap-3">
-                        <span class="text-yellow-500 font-bold">1.</span>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="text-yellow-500 font-bold">2.</span>
-                        <span>Officia corrupti porro eligendi tempore dolor numquam.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="text-yellow-500 font-bold">3.</span>
-                        <span>Beatae neque temporibus minus, nulla ducimus suscipit.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="text-yellow-500 font-bold">4.</span>
-                        <span>Itaque nesciunt voluptatibus repellat reprehenderit.</span>
-                    </li>
+                        <span class="text-yellow-500 font-bold">{{$loop->iteration}}</span>
+                        <span>{{$item->misi}}</span>
+                    </li>                        
+                    @endforeach
                 </ul>
             </div>
 

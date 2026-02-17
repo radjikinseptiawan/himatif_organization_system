@@ -3,9 +3,9 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 place-items-center">
 
-            <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
-                <div class="bg-gray-600 rounded-md p-2 h-72">
-                    <p>Belum ada foto</p>
+            <div onclick="window.location.href = '/departemen/departemen_po'" class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
+                <div class="bg-[#0c2b4b] rounded-md p-2 h-72">
+                    <img src="{{ $data[3]->lambang_departemen }}" alt="">
                 </div>
                 <h1 class="font-semibold p-2  text-[#0c2b4b]">
                     Departemen Pengembang Organisasi
@@ -16,10 +16,9 @@
                 </p>
             </div>
 
-
-            <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
+            <div onclick="window.location.href = '/departemen/departemen_medkominfo'" class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
                 <div class="bg-[#0c2b4b] rounded-md p-2 h-72">
-                    <img src="logo/medkominfo.png" alt="">
+                    <img src="{{ $data[4]->lambang_departemen }}" alt="">
                 </div>
                 <h1 class="font-semibold p-2  text-[#0c2b4b]">
                     Departemen Media Komunikasi Informasi
@@ -31,9 +30,9 @@
             </div>
 
 
-             <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
+             <div onclick="window.location.href = '/departemen/departemen_miba'" class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
                 <div class="bg-[#0c2b4b] rounded-md p-2 h-72">
-                    <img src="logo/medkominfo.png" alt="">
+                    <img src="{{ $data[5]->lambang_departemen }}" alt="">
                 </div>
                 <h1 class="font-semibold p-2  text-[#0c2b4b]">
                     Departemen Minat & Bakat
@@ -45,9 +44,9 @@
             </div>
 
                        
-           <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
+           <div onclick="window.location.href = '/departemen/departemen_litbang'" class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
                 <div class="bg-[#0c2b4b] rounded-md p-2 h-72">
-                    <img src="logo/litbang.png" alt="">
+                    <img src="{{ $data[2]->lambang_departemen }}" alt="">
                 </div>
                 <h1 class="font-semibold p-2  text-[#0c2b4b]">
                     Departemen Penelitian & Pengembangan
@@ -59,9 +58,9 @@
             </div>
 
             
-            <div class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
+            <div onclick="window.location.href = '/departemen/departemen_hubineks'" class="bg-white p-4 rounded-md shadow w-80 text-center cursor-pointer hover:shadow-[#0c2b4b] hover:shadow-xl transition-all">
                 <div class="bg-[#0c2b4b] rounded-md p-2 h-72">
-                    <img src="logo/medkominfo.png" alt="">
+                    <img src="{{ $data[6]->lambang_departemen }}" alt="">
                 </div>
                 <h1 class="font-semibold p-2  text-[#0c2b4b]">
                     Departemen Hubungan Internal & Eksternal

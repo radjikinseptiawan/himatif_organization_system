@@ -15,20 +15,30 @@ class AuthController extends Controller
     public function auth(Request $req){
         try{
         $Credentials = $req->validate([
-            "nim" => "string|max:255|required",
+            "email" => "string|max:255|required",
             "password" => "string|max:255|required"
         ]);
 
-        if(Auth::attempt(["name"=>$Credentials["nim"],"password"=>$Credentials['password']])){
+        if(Auth::attempt(["email"=>$Credentials["email"],"password"=>$Credentials['password']])){
             $req->session()->regenerate();
 
-            return redirect(route("dashboard"));
+            return redirect()->route("admin.galeri");
         }   
         
-
+            return redirect()->route("home")->with("Error","Nim atau password salah!");
         
         }catch(\Exception $e){
             dd($e->getMessage());
         }
+    }
+
+
+    public function logout(Request $req){
+        Auth::logout();
+
+        $req->session()->invalidate();
+        $req->session()->regenerateToken();
+
+        return redirect()->route("home");
     }
 }

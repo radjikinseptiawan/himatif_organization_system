@@ -18,10 +18,9 @@
     </div>
 
 
-    <div class="h-screen">
-
+    <div class="min-h-screen mt-20">
+        @include("components.departemen")
     </div>
-
 
     @include("components.footer")
 </body>

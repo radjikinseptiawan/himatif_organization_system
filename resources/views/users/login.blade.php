@@ -7,33 +7,64 @@
     <title>Login</title>
     @vite("resources/css/app.css","resources/js/app.js")
 </head>
-<body class="flex items-center justify-center h-screen">
-    
+<body class="min-h-screen bg-gray-100 flex items-center justify-center px-4">
 
-    <div class="flex items-center justify-center gap-4 flex-col text-center rounded-md shadow-xl font-bold text-[#030530]  w-72 md:w-xl bg-white p-2">
-        <div class="flex">
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 text-[#030530]">
+        
+        <!-- Logo -->
+        <div class="flex items-center justify-center gap-4 mb-6">
             <img src="/logohimatif.png" width="60" alt="">
             <img src="/kabinetIntegra.png" width="60" alt="">
         </div>
-        <h1 class="text-xl">Login</h1>
-        <form action="" class="flex w-54 md:w-80 flex-col gap-4 my-3" method="POST">
+
+        <!-- Judul -->
+        <h1 class="text-2xl font-bold text-center mb-6">Login</h1>
+
+        <!-- Error message -->
+        @if(session('error'))
+            <div class="bg-red-500 text-white text-sm p-2 rounded mb-4 text-center">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        <!-- Form -->
+        <form action="" method="POST" class="flex flex-col gap-4">
             @csrf
-            <div class="border border-gray-400 flex  w-full flex-col rounded-md p-1 font-semibold">
-                <label for="nim" class="text-sm text-left">Nomor Induk Mahasiswa*</label>
-                <input type="text" name="nim" class="border rounded-md border-gray-400 p-1" id="nim">
+
+            <div class="flex flex-col gap-1">
+                <label for="email" class="text-sm font-semibold">
+                    Email*
+                </label>
+                <input 
+                    type="email" 
+                    name="email"
+                    id="email"
+                    class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#0c2b4b]"
+                    required>
             </div>
 
-            <div class="border border-gray-400 flex  w-full flex-col rounded-md p-1 font-semibold">
-                <label for="pw" class="text-sm text-left ">Password*</label>
-                <input type="password" name="password" class="border rounded-md border-gray-400 p-1" id="pw">
+            <div class="flex flex-col gap-1">
+                <label for="pw" class="text-sm font-semibold">
+                    Password*
+                </label>
+                <input 
+                    type="password" 
+                    name="password"
+                    id="pw"
+                    class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#0c2b4b]"
+                    required>
             </div>
 
-            <button class="text-white cursor-pointer transition-all hover:bg-[#0c0476] bg-[#01032e] p-2 rounded-md">Masuk</button>
+            <button 
+                type="submit"
+                class="mt-2 bg-[#0c2b4b] text-white font-bold py-2 rounded-md 
+                hover:bg-[#163e66] transition-all">
+                Masuk
+            </button>
         </form>
 
-        <div>
-        </div>
     </div>
 
 </body>
+
 </html>

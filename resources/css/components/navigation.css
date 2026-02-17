@@ -18,3 +18,8 @@
 .hidden {
     display: none;
 }
+
+.menu-item {
+    @apply block p-2 rounded-md bg-sky-300/20 text-[#0c2b4b] 
+    hover:bg-[#69849f] hover:text-white transition;
+}

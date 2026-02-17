@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
@@ -10,10 +11,22 @@ Route::get("/penjamin_mutu",[Controller::class,"penjaminMutuPages"])->name("penj
 Route::get("/departemen",[Controller::class,"departemen"])->name("departemen");
 Route::get("/galeri",[Controller::class,"galeri"])->name("galeri");
 Route::get("/event",[Controller::class,"event"])->name("event");
-
+Route::get("/departemen/{departemen}",[Controller::class,'divisi']);
 Route::get("/dashboard",function(){
     return view("users.dashboard");
 })->name("dashboard")->middleware(["auth"]);
 
 Route::get("/login",[AuthController::class,"render"])->name("login");
 Route::post("/login",[AuthController::class,"auth"]);
+
+Route::middleware(["auth"])->group(function(){
+    // Galeri
+    Route::get("/admin/galeri",[AdminController::class,"renderGaleri"])->name("admin.galeri");
+
+    // Event
+    Route::get("/admin/event",[AdminController::class,"renderEvent"])->name("admin.event");
+
+
+    // Logout
+    Route::get("/logout",[AuthController::class,"logout"])->name("logout");
+});
