@@ -10,16 +10,11 @@
 
 <body class="bg-gray-100 min-h-screen flex flex-col">
     
-    <!-- Navigation -->
     @include("components.navigation.nonLoginNavigation")
 
-    <!-- Main Layout -->
     <div class="flex flex-1 mt-20">
-        
-        <!-- Sidebar -->
         @include("components.adminPanel")
 
-        <!-- Content -->
         <main class="flex-1 p-6">
             <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-2xl p-8">
                 
