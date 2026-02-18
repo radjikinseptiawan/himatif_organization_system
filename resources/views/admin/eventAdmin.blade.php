@@ -25,14 +25,14 @@
             Kelola Event
         </h1>
 
-        <a href="#"
-            id="addAlbum"
+        <button
+           id="addAlbumBtn"
            class="inline-block mb-6 px-4 py-2
            bg-[#0c2b4b] text-white font-semibold
            rounded-md shadow hover:bg-[#163e66]
            transition">
             + Tambah Event
-        </a>
+        </button>
 
         <div class="grid gap-6
             grid-cols-1
@@ -40,52 +40,40 @@
             md:grid-cols-3
             lg:grid-cols-4">
 
-            @foreach ($data as $item)
-            <div class="bg-white shadow-xl rounded-xl overflow-hidden
-                hover:scale-105 transition-all hover:shadow-[#0c2b4b]/50
-                flex flex-col">
-
-                <img 
-                    src="{{ $item->cover_link }}" 
-                    alt="{{ $item->judul_albun }}"
-                    class="h-44 w-full object-cover">
-
-                <div class="p-4 flex flex-col flex-1">
-                    <h1 class="text-lg font-bold text-center">
-                        {{ $item->judul_album }}
-                    </h1>
-
-                    <a href="{{ $item->google_link }}"
-                        target="_blank"
-                        class="my-2 mt-auto p-2 text-center
-                        bg-[#0c2b4b] text-white font-bold
-                        rounded-md hover:bg-[#163e66] transition">
-                        View
-                    </a>
-    @auth
-                    <a href="{{ $item->google_link }}"
-                        target="_blank"
-                        class="mt-auto p-2 text-center
-                        my-2
-                        bg-[#7b0303] text-white font-bold
-                        rounded-md hover:bg-[#ad0707] transition">
-                        Hapus
-                    </a>     
-                    
-                    <a href="{{ $item->google_link }}"
-                        target="_blank"
-                        class="mt-auto p-2 text-center
-                        my-2
-                        bg-[#dbac00] text-white font-bold
-                        rounded-md hover:bg-[#afbc03] transition">
-                        Edit
-                    </a>
-
-                    @endauth
-
-                </div>
-            </div>
-            @endforeach
+@foreach ($data as $item)
+<div class="bg-white shadow-xl rounded-xl overflow-hidden flex flex-col">
+    <img src="{{ asset('storage/' . $item->cover_link) }}" class="object-cover h-54">
+    <div class="p-4 flex flex-col flex-1">
+        <h1 class="text-lg font-bold text-center">{{ $item->judul_event }}</h1>
+        <a href="{{ $item->google_link }}"
+            target="_blank"
+            class="my-2 mt-auto p-2 text-center
+            bg-[#0c2b4b] text-white font-bold
+            rounded-md hover:bg-[#163e66] transition">
+            View
+            </a>
+        @auth
+        
+        <form action="{{ route("hapus.event",$item->event_id) }}" method="POST">
+            @csrf()
+            @method("DELETE")
+            <button type="submit" class="w-full mt-auto p-2 text-center my-2 bg-[#7b0303] text-white font-bold rounded-md">
+                Hapus
+            </button> 
+        </form>
+        
+        <form method="GET" action="{{ route("admin.selectEvent",$item->event_id) }}">
+            @csrf()
+        <button 
+        type="submit"
+        class="edit-btn-trigger w-full mt-auto p-2 text-center my-2 bg-[#dbac00] text-white font-bold rounded-md">
+            Edit
+        </button>
+        </form>
+        @endauth
+    </div>
+</div>
+@endforeach
 
         </div>
     </main>
@@ -101,15 +89,17 @@
             <button id="closeModal" class="text-red-600 font-bold">X</button>
         </div>
 
-        <form class="flex flex-col gap-3">
-            <label>Cover</label>
-            <input type="file" class="border p-2 rounded">
+        <form method="POST" action="{{ route("tambah.event") }}" class="flex flex-col gap-3" enctype="multipart/form-data">
+            @csrf
+            @method("POST")
+            <label for="cover">Cover</label>
+            <input type="file" name="cover" id="cover" class="border p-2 rounded">
 
-            <label>Nama Event</label>
-            <input type="text" class="border p-2 rounded">
+            <label for="album">Nama Event</label>
+            <input type="text" name="event" id="album" class="border p-2 rounded">
 
-            <label>Link Google Drive</label>
-            <input type="text" class="border p-2 rounded">
+            <label for="gdrive">Link Google Form</label>
+            <input type="text" id="form" name="form" class="border p-2 rounded">
 
             <button type="submit"
                 class="bg-[#0c2b4b] text-white py-2 rounded hover:bg-[#163e66]">

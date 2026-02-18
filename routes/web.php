@@ -22,12 +22,16 @@ Route::post("/login",[AuthController::class,"auth"]);
 Route::middleware(["auth"])->group(function(){
     // Galeri
     Route::get("/admin/galeri",[AdminController::class,"renderGaleri"])->name("admin.galeri");
+    Route::post("/admin/galeri",[AdminController::class, "addGaleri"])->name("add.galeri");
     Route::get("admin/galeri/{id}",[AdminController::class,"selectGaleri"])->name("admin.selectGaleri");
-    Route::post("/admin/galeri",[AdminController::class, "addGaleri"])->name("tambah.galeri");
+    Route::put("/admin/galeri/{id}",[AdminController::class,"updateGaleri"])->name("edit.galeri");
     Route::delete("/admin/galeri/{id}",[AdminController::class, "deleteGaleri"])->name("hapus.galeri");
     // Event
     Route::get("/admin/event",[AdminController::class,"renderEvent"])->name("admin.event");
-
+    Route::get("admin/event/{id}",[AdminController::class,"selectEvent"])->name("admin.selectEvent");
+    Route::post("/admin/event",[AdminController::class, "addEvent"])->name("tambah.event");
+    Route::delete("/admin/event/{id}",[AdminController::class, "deleteEvent"])->name("hapus.event");    
+    Route::put("/admin/event/{id}",[AdminController::class,"editEvent"])->name("edit.event");
 
     // Logout
     Route::get("/logout",[AuthController::class,"logout"])->name("logout");

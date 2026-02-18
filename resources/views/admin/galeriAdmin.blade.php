@@ -61,9 +61,14 @@
             </button> 
         </form>
         
-        <button class="edit-btn-trigger w-full mt-auto p-2 text-center my-2 bg-[#dbac00] text-white font-bold rounded-md">
+        <form action="{{ route('admin.selectGaleri',$item->galeri_id) }}" method="GET">
+        @csrf()
+        <button 
+        type="submit"
+        class="edit-btn-trigger w-full mt-auto p-2 text-center my-2 bg-[#dbac00] text-white font-bold rounded-md">
             Edit
         </button>
+        </form>
         @endauth
     </div>
 </div>
@@ -83,7 +88,7 @@
             <button id="closeModal" class="text-red-600 font-bold">X</button>
         </div>
 
-        <form method="POST" action="{{ route("tambah.galeri") }}" class="flex flex-col gap-3" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('add.galeri') }}" class="flex flex-col gap-3" enctype="multipart/form-data">
             @csrf
             @method("POST")
             <label for="cover">Cover</label>
