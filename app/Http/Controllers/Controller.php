@@ -7,6 +7,8 @@ use App\Models\Departemen;
 use App\Models\Events;
 use App\Models\Galeri;
 use App\Models\Misi;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class Controller
 {
@@ -71,5 +73,44 @@ class Controller
             "misi" => $misi,
             "anggota" => $anggota
         ]);
+    }
+
+    public function emailSend(Request $req){
+        try{
+        $validasi = $req->validate([
+            "email" => "string|required",
+            "subject" => "string|required",
+            "aspirasi" => "string|required"
+        ]);
+
+        $data = [
+            'emailPengirim' => $validasi['email'],
+            'subject' => "Kotak Aspirasi - " . $validasi['subject'],
+            'aspirasi' => $validasi['aspirasi'] 
+        ];
+
+        Mail::send([],[],function($message) use($data){
+            $message->to("himatif@pelitabangsa.ac.id")
+            ->subject($data['subject'])
+            ->html("
+            <h3>
+                Ada Aspirasi Masuk!
+            </h3>
+            <p>
+                <strong>Dari :</strong> {$data['emailPengirim']}
+            </p>
+            <p>
+                <strong>Subject :</strong> {$data['subject']}
+            </p>
+            <p>
+                <strong>Aspirasi :</strong> {$data['aspirasi']}
+            </p>
+            ");
+        });
+
+        return back()->with("success","Succes to send message!");
+        }catch(\Exception $e){
+            dd($e->getMessage());
+        }
     }
 }

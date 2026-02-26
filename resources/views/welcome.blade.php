@@ -62,8 +62,7 @@
     @include("components.departemen")
     </div>
 
-
-
+@include("components.kotakAspirasi")    
 @include("components.footer")
 
 </body>

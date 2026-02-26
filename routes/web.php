@@ -15,6 +15,7 @@ Route::get("/departemen/{departemen}",[Controller::class,'divisi']);
 Route::get("/dashboard",function(){
     return view("users.dashboard");
 })->name("dashboard")->middleware(["auth"]);
+Route::post("/kirim_aspirasi",[Controller::class,"emailSend"])->name("kirim.email");
 
 Route::get("/login",[AuthController::class,"render"])->name("login");
 Route::post("/login",[AuthController::class,"auth"]);
