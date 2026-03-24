@@ -15,11 +15,6 @@
                 organisasi, dan pengabdian masyarakat. 
             </p>
             <br>
-            <p class="text-gray-600 leading-relaxed">
-                Website ini dibuat khusus untuk para pengurus periode tahun 2026/2027 
-                dalam rangka menjadi sistem informasi organisasi untuk para angkatan baru 
-                atau orang yang ingin mengenal HIMATIF lebih dalam.
-            </p>
         </div>
 
         <div class="flex flex-col md:flex-row items-center gap-10 mb-16">

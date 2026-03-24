@@ -26,11 +26,7 @@
             <div class="inset-0 absolute bg-black/80"></div>
             <img src="/assets/pelantikan.jpg" class="my-4" alt="">        
         <div class="absolute inset-0 flex flex-row gap-2 items-center justify-center">
-            <img src="logo/logohimatif.png" class="w-20 md:w-32" alt="">
             <h1 class="text-sm md:text-5xl font-bold text-white text-center">SELAMAT DATANG DI WEBSITE <br> <span class="text-yellow-500">HIMATIF</span></h1>
-            <div class="bg-white rounded-full">
-                <img src="logo/kabinetIntegra.png" class="w-20 md:w-32" alt="">
-            </div>
         </div>
     </div>
 
@@ -57,13 +53,15 @@
         </div>
     </div>
 
+    @include("components.partnership")
+    
 
     <div id="departSection">
     @include("components.departemen")
     </div>
 
-@include("components.kotakAspirasi")    
-@include("components.footer")
+    @include("components.kotakAspirasi")    
+    @include("components.footer")
 
 </body>
 </html>

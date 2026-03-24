@@ -42,5 +42,5 @@
     <div class="px-5 bg-[#416d9a] font-bold text-white w-full flex flex-col md:flex-row bottom-0 justify-center items-center md:justify-between">
         <p>© <a href="{{ route("home") }} text-[12px]">HIMATIF-Univ.Pelita Bangsa</a></p>
 
-        <p clas="text-[12px]">Designed By Departemen LITBANG</p>
+        <p clas="text-[12px]">Powered By Departemen LITBANG</p>
     </div>
